@@ -1,0 +1,148 @@
+:root {
+  --bg: #f6efe5;
+  --card: #fffaf3;
+  --text: #1f2933;
+  --muted: #52606d;
+  --line: #e8dccb;
+  --accent: #c4492d;
+  --accent-soft: #ffe2d8;
+  --shadow: 0 18px 40px rgba(92, 61, 46, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, #fff7ef 0, transparent 32%),
+    linear-gradient(135deg, #f2e7d7, var(--bg));
+}
+
+.app {
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 0.95;
+}
+
+.intro {
+  max-width: 44rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.panel {
+  background: rgba(255, 250, 243, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.search {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid #d8c6b2;
+  border-radius: 14px;
+  background: white;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.result-count {
+  margin: 1rem 0 1.25rem;
+  color: var(--muted);
+}
+
+.notes-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.note-card {
+  padding: 1rem;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.note-card h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.note-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.empty {
+  padding: 1rem;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px dashed #d3bda3;
+  color: var(--muted);
+  text-align: center;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+@media (max-width: 640px) {
+  .app {
+    width: min(100% - 1rem, 920px);
+    padding-top: 1.25rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+}
