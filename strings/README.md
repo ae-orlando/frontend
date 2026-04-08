@@ -26,7 +26,7 @@ This app displays a list of JavaScript learning notes. As you type in the search
 
 Open `index.html` in your browser.
 
-## Ideas for your next version
+## Ideas for the next version
 
 - Add a button to show the full note
 - Let users add their own notes
