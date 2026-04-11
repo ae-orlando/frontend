@@ -89,6 +89,54 @@ h1 {
   color: var(--muted);
 }
 
+.transform-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 244, 236, 0.95));
+}
+
+.transform-panel h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.transform-intro {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.transform-card {
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fffdf9;
+}
+
+.transform-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.transform-value {
+  margin: 0;
+  min-height: 1.5rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
 .notes-list {
   display: grid;
   gap: 1rem;
@@ -144,5 +192,9 @@ code {
 
   .panel {
     padding: 1rem;
+  }
+
+  .transform-grid {
+    grid-template-columns: 1fr;
   }
 }

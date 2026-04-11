@@ -29,6 +29,10 @@ const notes = [
 const searchInput = document.querySelector("#search");
 const notesList = document.querySelector("#notes-list");
 const resultCount = document.querySelector("#result-count");
+const originalOutput = document.querySelector("#original-output");
+const trimOutput = document.querySelector("#trim-output");
+const lowerOutput = document.querySelector("#lower-output");
+const upperOutput = document.querySelector("#upper-output");
 
 function getPreview(text) {
   return `${text.slice(0, 80)}...`;
@@ -59,8 +63,20 @@ function displayNotes(notesToShow) {
     .join("");
 }
 
+function updateStringMethodPreview(value) {
+  const trimmedValue = value.trim();
+
+  originalOutput.textContent = value || "Nothing typed yet.";
+  trimOutput.textContent = trimmedValue || "Nothing typed yet.";
+  lowerOutput.textContent = trimmedValue.toLowerCase() || "Nothing typed yet.";
+  upperOutput.textContent = trimmedValue.toUpperCase() || "Nothing typed yet.";
+}
+
 function handleSearch() {
-  const searchValue = searchInput.value.toLowerCase().trim();
+  const rawValue = searchInput.value;
+  const searchValue = rawValue.trim().toLowerCase();
+
+  updateStringMethodPreview(rawValue);
 
   const filteredNotes = notes.filter((note) => {
     const title = note.title.toLowerCase();
@@ -79,4 +95,5 @@ function handleSearch() {
 
 searchInput.addEventListener("input", handleSearch);
 
+updateStringMethodPreview("");
 displayNotes(notes);
